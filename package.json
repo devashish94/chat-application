@@ -1,0 +1,23 @@
+{
+  "name": "chat-application",
+  "version": "1.0.0",
+  "description": "Chatting Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devashish94/chat-application.git"
+  },
+  "author": "Devashish Roy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devashish94/chat-application/issues"
+  },
+  "homepage": "https://github.com/devashish94/chat-application#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  }
+}
