@@ -3,13 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Application </title>
     <link rel="stylesheet" href="bootstrap-5.3.0-a2/css/bootstrap.min.css">
     <script defer src="bootstrap-5.3.0-a2/js/bootstrap.min.js"></script>
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer src="chat-application.js"></script>
+    <link rel="stylesheet" href="chat-application.css">
+    <title>Chat Application</title>
 </head>
 <body>
-    <div class="container-fluid">
-        This is the Chat Application
+    <div class="container-lg" id="outermost-container">
+        <div class="col-sm-10 col-md-10 col-lg-10" id="left-main-container">
+            <div class="heading-text">
+                <h1>Conversations</h1>
+            </div>
+            <div class="chat-section">
+                chat section
+            </div>
+            <div class="input-send-div">
+                <div class="input-div">
+                    <input type="text" class="text-input">
+                </div>
+                <div class="send-button-div">
+                    <button class="send-button">Send</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2" id="right-side-bar">
+            <div class="leave-button-div">
+                <button onclick='location.href="index.html"' class="leave-button">Leave</button>
+            </div>
+        </div>
     </div>
 </body>
 </html>

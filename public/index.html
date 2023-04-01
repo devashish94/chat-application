@@ -2,20 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap-5.3.0-a2/css/bootstrap.min.css">
     <script defer src="bootstrap-5.3.0-a2/js/bootstrap.min.js"></script>
+    <title>Login</title>
 </head>
 <body>
     <div class="container-fluid">
         <div class="left">
-            <form action="chat-application.html" method="POST">
-                <label for="user-name">Enter your name:</label>
-                <input type="text">
-                <button class="submit-button" type="submit">Submit</button>
+            <form action="chat-application.html" method="GET">
+                <div class="form-container">
+                    <label for="user-name">Enter your name:</label>
+                    <input type="text" name="userName" required autocomplete="off">
+                    <button class="submit-button" id="submit-button" type="submit">Submit</button>
+                </div>
             </form>
         </div>
         <div class="right"></div>
     </div>
+    <script>
+        const submitButton = document.getElementById('submit-button');
+    </script>
 </body>
 </html>
