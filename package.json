@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/devashish94/chat-application#readme",
   "dependencies": {
+    "bootstrap": "^5.3.0-alpha2",
     "express": "^4.18.2",
     "socket.io": "^4.6.1"
   },
