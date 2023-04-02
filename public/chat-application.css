@@ -13,13 +13,13 @@ body {
 }
 
 .outer-frame {
-    height: 90vh;
+    height: 100vh;
     width: auto;
     background-color: white;
 }
 
 .send-button-div {
-    
+
     border: 3px solid;
 }
 
