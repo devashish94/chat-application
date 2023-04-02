@@ -8,13 +8,15 @@
     /* color: white; */
 }
 
-body {
+html, body {
+    /* COME HERE IF NEWLY CREATED DIV ELEMENTS HAVE THIS DIV'S BACKGROUND COLOR */
+    margin: 0;
+    padding: 0;
     background-color: purple;
 }
 
 .outer-frame {
     height: 100vh;
-    width: auto;
     background-color: white;
 }
 
@@ -25,4 +27,14 @@ body {
 
 div {
     border: 1px solid;
+}
+
+.chat-input {
+    width: 100%;
+}
+
+.outest-frame {
+    border: 2px solid yellow;
+    /* height: 100vh; */
+    overflow: hidden;
 }
