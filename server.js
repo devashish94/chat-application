@@ -17,6 +17,7 @@ clientsConnected = [];
 io.on('connection', socket => {
     console.log(`socket connection with id: ${socket.id}`);
     clientsConnected[socket.id] = '1';
+    
 
     // emit user connected message to all connected clients
 

@@ -1,17 +1,28 @@
-#outermost-container {
-    background-color: rgb(239, 199, 255);
-    display: flex;
+.left-section {
+    border: 3px solid red;
+    /* color: white; */
+}
+
+.right-section {
+    border: 3px solid green;
+    /* color: white; */
 }
 
 body {
-    background-color: rgb(239, 199, 255);
+    background-color: purple;
 }
 
-.input-send-div {
-    display: flex;
-
+.outer-frame {
+    height: 90vh;
+    width: auto;
+    background-color: white;
 }
 
-.chat-section {
-    background: #000;
+.send-button-div {
+    
+    border: 3px solid;
+}
+
+div {
+    border: 1px solid;
 }
