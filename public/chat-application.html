@@ -12,25 +12,27 @@
 </head>
 <body>
     <div class="container d-flex flex-column outer-frame">
-        <div class="row d-flex flex-row">
+        <div class="row d-flex flex-row flex-shrink-0 top-div">
             <div class="col-8 heading-div">
                 <h1>Conversations</h1>
             </div>
             <div class="col-4 people-count-div">
-                <h6>Members:</h6>
+                <h6>Members: 0</h6>
             </div>
         </div>
-        <div class="row flex-grow-1">
-            <div class="main-chat">Chat area</div>
+        <div class="row flex-grow-1 overflow-auto outer-main-chat">
+            <div class="main-chat" >
+                <div class="container" id="main-chat"></div>
+            </div>
         </div>
-        <div class="row">
+        <div class="row flex-shrink-0 last">
             <div class="input-send">
                 <div class="row">
-                    <div class="col-10 col-sm-10 col-md-10 col-lg-11 input-div">
-                        <input class="w-100" type="text">
+                    <div class="col-9 col-sm-10 col-md-10 col-lg-11 input-div">
+                        <input class="w-100 chat-input" id="chat-input" type="text">
                     </div>
-                    <div class="col-2 col-sm-2 col-md-2 col-lg-1 send-button-div">
-                        <button class="send-button">Send</button>
+                    <div class="col-3 col-sm-2 col-md-2 col-lg-1 send-button-div">
+                        <button class="w-100 send-button" id="send-button">Send</button>
                     </div>
                 </div>
             </div>
@@ -38,19 +40,3 @@
     </div>
 </body>
 </html>
-
-
-
-<!-- AFTER YOU WAKE UP:
-    - RE WRITE THIS HTML CODE FROM SCRATCH
-    - USE THE FOLLOWING LAYOUT:
-        > CONTAINER
-            > ROW
-                > COL
-                > COL
-                > COL 
-            > ROW   
-                > COL
-                > COL
-                > COL  
--->

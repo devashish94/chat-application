@@ -1,36 +1,68 @@
+html, body {
+    background-color: #8a749e;
+    height: 100%;
+    min-height: -webkit-fill-available;
+    position: fixed;
+    bottom: calc(100vh - 100%);
+}
+
 .outer-frame {
     background-color: pink;
     color: white;
     height: 100vh;
     position: relative;
-}
-
-.inner-frame {
-    background-color: white;
+    background-color: #564168;
+    border: 1px solid #A05088;
+    /* border: 1px solid black; */
 }
 
 .input-send {
-    position: absolute;
+    /* position: absolute;
     bottom: 0;
+     */
+}
+
+.last {
+    border-top: 1px solid #A05088;
+    border-bottom: 1px solid #A05088;
+}
+
+.top-div {
+    border-top: 1px solid #A05088;
+    border-bottom: 1px solid #A05088;
+    color: #d18094;
+}
+
+.outer-main-chat {
+    border-bottom: 1px solid #A05088;
 }
 
 .heading-div {
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .people-count-div {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: medium;
 }
 
-body {
-    background-color: white;
-} 
-
 div {
-    border: 1px solid black;
+    /* border: 1px solid black; */
+}
+
+.chat-input {
+    background-color: #d18094;
+    outline: none;
+    color: rgb(255, 232, 232);
+}
+
+.send-button {
+    border-radius: 7px;
+    outline: none;
+    background-color: #d18094;
+    color: white;
 }
