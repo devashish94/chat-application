@@ -1,40 +1,36 @@
-.left-section {
-    border: 3px solid red;
-    /* color: white; */
-}
-
-.right-section {
-    border: 3px solid green;
-    /* color: white; */
-}
-
-html, body {
-    /* COME HERE IF NEWLY CREATED DIV ELEMENTS HAVE THIS DIV'S BACKGROUND COLOR */
-    margin: 0;
-    padding: 0;
-    background-color: purple;
-}
-
 .outer-frame {
+    background-color: pink;
+    color: white;
     height: 100vh;
+    position: relative;
+}
+
+.inner-frame {
     background-color: white;
 }
 
-.send-button-div {
-
-    border: 3px solid;
+.input-send {
+    position: absolute;
+    bottom: 0;
 }
+
+.heading-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.people-count-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: medium;
+}
+
+body {
+    background-color: white;
+} 
 
 div {
-    border: 1px solid;
-}
-
-.chat-input {
-    width: 100%;
-}
-
-.outest-frame {
-    border: 2px solid yellow;
-    /* height: 100vh; */
-    overflow: hidden;
+    border: 1px solid black;
 }
