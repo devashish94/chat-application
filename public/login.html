@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,11 +6,16 @@
     <link rel="stylesheet" href="bootstrap-5.3.0-a2/css/bootstrap.min.css">
     <script defer src="bootstrap-5.3.0-a2/js/bootstrap.min.js"></script>
     <title>Login</title>
+    <style>
+        .container {
+            height: 100vh;
+        }
+    </style>
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container bg-light">
         <div class="left">
-            <form action="chat-application.html" method="GET">
+            <form action="chat-application.html" method="post">
                 <div class="form-container d-flex flex-column">
                     <label for="user-name">Enter your name:</label>
                     <input type="text" name="userName" required autocomplete="off">
@@ -23,5 +28,27 @@
     <script>
         const submitButton = document.getElementById('submit-button');
     </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form action="/login" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
 </body>
 </html>

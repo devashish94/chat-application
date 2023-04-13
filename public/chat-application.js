@@ -1,4 +1,6 @@
 const socket = io();
+// const url = require('url');
+
 
 const mainChat = document.getElementById('main-chat');
 const chatInput = document.getElementById('chat-input');
@@ -31,6 +33,5 @@ function newDivMessage(chatText) {
     newDiv.style = 'border-radius: 7px; margin: 10px; border: 1px solid black';
     return newDiv;
 };
-
 
 // use URL parser to extract the username from URL

@@ -1,9 +1,9 @@
 html, body {
     background-color: #8a749e;
     height: 100%;
-    min-height: -webkit-fill-available;
+    /* min-height: -webkit-fill-available;
     position: fixed;
-    bottom: calc(100vh - 100%);
+    bottom: calc(100vh - 100%); */
 }
 
 .outer-frame {
