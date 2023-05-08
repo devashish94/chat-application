@@ -3,9 +3,10 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 
-
-const PORT = process.env.PORT || 42069;
+const PORT = process.env.PORT || 3000;
 const HOST = 'localhost';
+
+let username = undefined;
 
 // Set up body-parser middleware to parse form data
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -18,7 +19,7 @@ app.post('/chat-application.tml', (req, res) => {
     res.send('something did ome here');
 });
 
-app.get('/', (req, res) => {
+app.get('/chat', (req, res) => {
     console.log('got GET at /');
     res.sendFile(__dirname + '/public/login.html');
 });
@@ -26,19 +27,28 @@ app.get('/', (req, res) => {
 // Handle the login form ission
 app.post('/login', (req, res) => {
     // Get the username and password from the form data
-    const username = req.body.username;
+    username = req.body.username;
+    // const getUsername = req.body.username;
     const password = req.body.password;
 
     console.log(username, password);
 
     // Validate the username and password (example: hardcoded values)
-    if (username === 'a' && password === 'a') {
-        // Redirect to a success page
+    // if (getUsername === 'a' && password === 'a') {
+    //     // Redirect to a success page
+    //     res.redirect('/success');
+    // } else {
+    //     // Redirect to an error page
+    //     res.redirect('/error');
+    // }
+
+    if (username.length != 0) {
+        console.log(username);
         res.redirect('/success');
     } else {
-        // Redirect to an error page
-        res.redirect('/error');
+        res.redirect('/login');
     }
+
 });
 
 // Serve the success page
@@ -54,26 +64,41 @@ app.get('/error', (req, res) => {
 
 const io = require('socket.io')(server);
 
-clientsConnected = [];
+clients = {};
 
 // listen for socket.io connections
 io.on('connection', socket => {
-    console.log(`socket connection with id: ${socket.id}`);
-    clientsConnected[socket.id] = '1';
-    socket.emit('admin-message', {id: socket.id, chatMessage: 'Welcome to the Common Conversations Room'});
+    console.log(`Total number of connections: ${clients.length}`);
+    console.log(`socket connection with name: ${username} and socket.id: ${socket.id}`);
+
+    clients[socket.id] = username;
+
+    socket.emit('admin-message', {
+        username: clients[socket.id],
+        id: socket.id, 
+        chatMessage: 'Welcome to the Common Conversations Room'
+    });
 
     // send user joined message to everyone other than the one joined
-    socket.broadcast.emit('admin-message', {id: socket.id, chatMessage: 'has joined the chat'});
+    socket.broadcast.emit('admin-message', {
+        username: clients[socket.id],
+        id: socket.id, 
+        chatMessage: 'has joined the chat'
+    });
 
     // message from user
     socket.on('new-message', message => {
-        console.log(`${message.id}: ${message.chatMessage}`);
+        console.log(`${message.username}: ${message.chatMessage}`);
         socket.broadcast.emit('new-message', message);
     });
     
     // handle the socket client disconnect event
     socket.on('disconnect', () => {
         console.log(`socket id: ${socket.id} has disconnected`);
-        io.emit('admin-message', {id: socket.id, chatMessage: 'has left the chat'});
+        io.emit('admin-message', {
+            username: username,
+            id: socket.id, 
+            chatMessage: 'has left the chat'
+        });
     });
 });
